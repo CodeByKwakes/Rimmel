@@ -1,6 +1,6 @@
 /*This file hold our Course related Action Creators*/
 import * as types from './actionTypes';
-// import CourseApi from '../api/mockCourseApi';
+import PhotoApi from '../api/mockPhotoApi';
 // import {beginAjaxCall, ajaxCallError} from './ajaxStatusActions';
 
 /*export function createCourse(course){
@@ -24,16 +24,16 @@ export function updateCourseSuccess(course) {
 // Each returns a function that accepts a dispatch.
 // These are used by redux-thunk to support asynchronous interactions.
 
-/*export function loadPhotos(){
+export function loadPhotos(){
   return function(dispatch){
     // dispatch(beginAjaxCall());
-    return CourseApi.getAllPhotos().then(photos => {
+    return PhotoApi.getAllPhotos().then(photos => {
       dispatch(loadPhotosSussess(photos));
     }).catch(error => {
       throw(error);
     });
   };
-}*/
+}
 
 /*export function saveCourse(course) {
   return function (dispatch, getState) {
