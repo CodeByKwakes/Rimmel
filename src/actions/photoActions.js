@@ -1,6 +1,8 @@
 /*This file hold our Course related Action Creators*/
 import * as types from './actionTypes';
 import PhotoApi from '../api/mockPhotoApi';
+// import PhotoApi from '../api/realPhotoApi';
+// import axios from 'axios';
 // import {beginAjaxCall, ajaxCallError} from './ajaxStatusActions';
 
 /*export function createCourse(course){
@@ -27,13 +29,30 @@ export function updateCourseSuccess(course) {
 export function loadPhotos(){
   return function(dispatch){
     // dispatch(beginAjaxCall());
-    return PhotoApi.getAllPhotos().then(photos => {
+    return PhotoApi.getAllPhotos()
+    .then(photos => {
       dispatch(loadPhotosSussess(photos));
     }).catch(error => {
       throw(error);
     });
   };
 }
+
+/*using Axios*/
+
+/*const PHOTO_URL = 'http://jsonplaceholder.typicode.com';
+
+export function loadPhotos(){
+  return function(dispatch){
+    // dispatch(beginAjaxCall());
+    return axios(`${PHOTO_URL}`)
+    .then(photos => {
+      dispatch(loadPhotosSussess(photos));
+    }).catch(error => {
+      throw(error);
+    });
+  };
+}*/
 
 /*export function saveCourse(course) {
   return function (dispatch, getState) {

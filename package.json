@@ -14,6 +14,7 @@
   "author": "Kwakes Prempeh",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.14.0",
     "babel-polyfill": "6.8.0",
     "bootstrap": "3.3.6",
     "jquery": "2.2.3",
