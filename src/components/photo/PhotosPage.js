@@ -2,15 +2,16 @@ import React, {PropTypes} from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as photoActions from '../../actions/photoActions';
-// import CourseList from './CourseList';
+import PhotoList from './PhotoList';
 import {browserHistory} from 'react-router';
 
 class PhotosPage extends React.Component {
   render() {
+     const { photos } = this.props;
     return (
       <div>
-        <h1>Photo</h1>
-        <p>Photos go here...</p>
+        <h1>Photos</h1>
+        <PhotoList photos={photos} />
       </div>
     );
   }
@@ -34,4 +35,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default PhotosPage;
+export default connect(mapStateToProps, mapDispatchToProps)(PhotosPage);
