@@ -1,9 +1,11 @@
 import React, {PropTypes} from 'react';
 import { Link, IndexLink } from 'react-router';
 import LoadingDots from './LoadingDots';
+import AppBar from 'material-ui/AppBar';
 
 const Header = ({loading}) => {
   return (
+    <AppBar>
     <nav>
       <IndexLink to="/" activeClassName="active">Home</IndexLink>
       {" | "}
@@ -14,6 +16,7 @@ const Header = ({loading}) => {
       <Link to="/photos" activeClassName="active">Photos</Link>
       {loading && <LoadingDots interval={100} dots={20}/>}
     </nav>
+    </AppBar>
   );
 };
 
