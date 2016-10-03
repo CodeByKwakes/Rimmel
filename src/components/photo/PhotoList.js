@@ -1,9 +1,8 @@
 import React, {PropTypes} from 'react';
+import PhotoTile from './PhotoTile';
 
-import {GridList, GridTile} from 'material-ui/GridList';
-import IconButton from 'material-ui/IconButton';
+import {GridList} from 'material-ui/GridList';
 import Subheader from 'material-ui/Subheader';
-import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 
 const styles = {
   root: {
@@ -27,17 +26,9 @@ const PhotoList = ({photos}) => {
       cellHeight={200}
       style={styles.gridList}
     >
-
-      {photos.map(photo => (
-        <GridTile
-          key={photo.img}
-          title={photo.title}
-          subtitle={<span>by <b>{photo.author}</b></span>}
-          actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
-        >
-          <img src={photo.img} />
-        </GridTile>
-      ))}
+      {photos.map(photo =>
+        <PhotoTile key={photo.img} photo={photo} />
+      )}
     </GridList>
   </div>
   );
